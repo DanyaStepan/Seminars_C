@@ -53,3 +53,36 @@
 // -3 -> нет
 // 7 -> нет
 
+// System.Console.Write("Введите число -> ");
+// int num = Convert.ToInt32(Console.ReadLine());
+
+// if (num % 2 == 0)
+// {
+//     System.Console.Write($"Число {num } является чётным "); 
+// }
+// else 
+// {
+//     System.Console.Write($"Число {num } является нечётным ");
+// }
+
+
+// Задача 8: 
+// Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
+// 5 -> 2, 4
+// 8 -> 2, 4, 6, 8
+
+// System.Console.Write("Введите любое число начинающее от 1 -> "); 
+// int num = Convert.ToInt32(Console.ReadLine()); 
+// String num1 = ""; 
+ 
+// if ( num < 1) 
+// { 
+//     System.Console.Write($"Оштбочка вышла "); 
+//     num = Convert.ToInt32(Console.ReadLine()); 
+// } 
+// for ( int i = 1; i <= num; i ++) 
+// { 
+//     if ( i % 2 == 0 ) 
+//     num1 = num1 + ($" {i } "); 
+// } 
+// System.Console.Write($"{num} -> {num1}");
