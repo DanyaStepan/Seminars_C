@@ -1,4 +1,6 @@
-﻿// Задача 2: 
+﻿//СЕМИНАР 1.
+
+// Задача 2: 
 // Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
 // a = 5; b = 7 -> max = 7
 // a = 2 b = 10 -> max = 10
@@ -74,7 +76,7 @@
 // System.Console.Write("Введите любое число начинающее от 1 -> "); 
 // int num = Convert.ToInt32(Console.ReadLine()); 
 // String num1 = ""; 
- 
+
 // if ( num < 1) 
 // { 
 //     System.Console.Write($"Оштбочка вышла "); 
@@ -86,3 +88,116 @@
 //     num1 = num1 + ($" {i } "); 
 // } 
 // System.Console.Write($"{num} -> {num1}");
+
+
+//СЕМИНАР 2.
+
+// Задача 10: 
+// Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+// 456 -> 5
+// 782 -> 8
+// 918 -> 1
+
+// int Promt (string messege)
+// {
+//     System.Console.Write(messege);
+//     string value = Console.ReadLine();
+//     int result = Convert.ToInt32(value);
+//     return result;
+// }
+
+// int number = Promt("Введите трёхзначное число -> ");
+// if(number < 100 || number >= 1000)
+// {
+//     System.Console.Write("Вы ввели не трёхзначное число, повторите попытку ");
+//     return;
+// }
+// System.Console.Write($"Заданное число {number} ");
+// int secondRank = number / 10 % 10;
+// System.Console.Write($"Вторая цифра {secondRank} ");
+
+// Задача 13: 
+// Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+// 645 -> 5
+// 78 -> третьей цифры нет
+// 32679 -> 6
+
+// int Prompt(string messege)
+// {
+//     System.Console.Write(messege);
+//     string value = Console.ReadLine();
+//     int result = Convert.ToInt32(value);
+//     return result;
+// }
+
+// int GetThirdRank(int number)
+// {
+//     while (number > 999)
+//     {
+//         number /= 10;
+//     }
+//     return number % 10;
+// }
+
+// bool ValidateNumber(int number)
+// {
+//     if (number < 100)
+//     {
+//         System.Console.Write("Третьей цифры нет ");
+//         return false;
+//     }
+//     return true;
+// }
+
+// int number = Prompt("Введите число -> ");
+// if (ValidateNumber(number))
+// {
+//     System.Console.Write(GetThirdRank(number));
+// }
+
+// Задача 15: 
+// Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+// 6 -> да
+// 7 -> да
+// 1 -> нет
+
+// int Prompt(string messege)
+// {
+//     System.Console.Write(messege);
+//     string value = Console.ReadLine();
+//     int result = Convert.ToInt32(value);
+//     return result;
+// }
+
+// bool IsWeekend(int weekDay)
+// {
+//     if (weekDay > 5)
+//     {
+//         return true;
+//     }
+//     return false;
+// }
+
+// bool ValidateWeekday(int number)
+// {
+//     if (number > 0 && number <= 7)
+//     {
+//         return true;
+//     }
+//     System.Console.Write("Это не день недели!");
+//     return false;
+// }
+
+// int weekDay = Prompt("Введите день недели -> ");
+// if (ValidateWeekday(weekDay))
+// {
+//     if (IsWeekend(weekDay))
+//     {
+//         System.Console.Write("Ура! Выходной!");
+//     }
+//     else
+//     {
+//         System.Console.Write("Придётся поработать :( Досадно, но ладно... ");
+//     }
+// }
+
