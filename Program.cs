@@ -201,3 +201,90 @@
 //     }
 // }
 
+
+//СЕМИНАР 3.
+
+// Задача 19
+// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+// 14212 -> нет
+// 12821 -> да
+// 23432 -> да
+
+void Main(string[] args)
+{
+    Console.Write("Введите число -> ");
+    string name = Console.ReadLine();
+    string reverse = string.Empty;
+
+    for (int i = name.Length - 1; i >= 0; i--)
+    {
+        reverse += name[i];
+    }
+
+    if (name == reverse)
+    {
+        Console.WriteLine($"{name} является палиндромом.");
+    }
+    else
+    {
+        Console.WriteLine($"{name} не является палиндромом.");
+    }
+
+    Console.ReadKey();
+}
+
+
+
+// Задача 21
+// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+// A (3,6,8); B (2,1,-7), -> 15.84
+// A (7,-5, 0); B (1,-1,9) -> 11.53
+
+// int InputN(string msg)
+// {
+//     System.Console.Write($"{msg} -> ");
+// int value;
+// if (int.TryParse(Console.ReadLine(), out value))
+// {
+//     return value;
+// }
+// System.Console.WriteLine("Вы ввели не число");
+// Environment.Exit(1);
+// return 0;
+
+// }
+
+// int x1 = InputN("Введите координату X точки A");
+// int y1 = InputN("Введите координату Y точки A");
+// int z1 = InputN("Введите координату Z точки A");
+// int x2 = InputN("Введите координату X точки B");
+// int y2 = InputN("Введите координату Y точки B");
+// int z2 = InputN("Введите координату Z точки B");
+
+// double dis(int x1, int y1, int z1, int x2, int y2, int z2)
+// {
+//     int num1 = x2 - x1;
+//     int num2 = y2 - y1;
+//     int num3 = z2 - z1;
+//     return Math.Sqrt(num1 * num1 + num2 * num2 + num3 * num3);
+// }
+// System.Console.Write($"Растояние между точками A и B равно { dis(x1, y1, z1, x2, y2, z2):F2} ");
+
+
+// Задача 23
+// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+// 3 -> 1, 8, 27
+// 5 -> 1, 8, 27, 64, 125
+
+// void Quad (int x) 
+// { 
+//     int count = 1; 
+//     while ( count <= x) 
+//     { 
+//         System.Console.WriteLine($"{count} -> {Math.Pow(count, 3)}"); 
+//         count ++; 
+//     } 
+// } 
+// System.Console.WriteLine("Введите число"); 
+// int x = Convert.ToInt32(Console.ReadLine()); 
+// Quad(x);
