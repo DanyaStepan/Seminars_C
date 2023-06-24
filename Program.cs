@@ -210,30 +210,32 @@
 // 12821 -> да
 // 23432 -> да
 
-void Main(string[] args)
+
+void Palindrome(string[] array)
 {
     Console.Write("Введите число -> ");
-    string name = Console.ReadLine();
-    string reverse = string.Empty;
+    string num = "array.Length";
+    string reverse = num;
 
-    for (int i = name.Length - 1; i >= 0; i--)
+    for (int i = num.Length - 1; i >= 0; i--)
     {
-        reverse += name[i];
+        reverse += num[i];
     }
 
-    if (name == reverse)
+    if (num == reverse)
     {
-        Console.WriteLine($"{name} является палиндромом.");
+        Console.WriteLine($"{num} является палиндромом.");
     }
     else
     {
-        Console.WriteLine($"{name} не является палиндромом.");
+        Console.WriteLine($"{num} не является палиндромом.");
     }
 
     Console.ReadKey();
 }
 
-
+int num = Convert.ToInt32(Console.ReadLine()); 
+System.Console.WriteLine(Palindrome ());
 
 // Задача 21
 // Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
