@@ -211,31 +211,41 @@
 // 23432 -> да
 
 
-void Palindrome(string[] array)
-{
-    Console.Write("Введите число -> ");
-    string num = "array.Length";
-    string reverse = num;
+// void Palindrom(int number)
+// {
+//     if (number >= 10000 && number < 100000)
+//     {
+//         int num1 = number % 10;
+//         int num2 = (number / 10000) % 10;
+//         if (num1 == num2)
+//         {
+//             int num3 = (number / 10) % 10;
+//             int num4 = (number / 1000) % 10;
+//             if (num3 == num4)
+//             {
+//                 System.Console.WriteLine($"Число {number} является палиндромом");
+//             }
+//             else
+//             {
+//                 System.Console.WriteLine($"Число {number} не является палиндромом");
+//             }
+//         }
+//         else
+//         {
+//             System.Console.WriteLine($"Число {number} не является палиндромом");
+//         }
+//     }
+//     else
+//     {
+//         System.Console.WriteLine($"Попробуйте ещё раз. Число {number} не является пятизначным.");
+//     }
+// }
 
-    for (int i = num.Length - 1; i >= 0; i--)
-    {
-        reverse += num[i];
-    }
+// System.Console.Write("Введите пятизначное число -> ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// Palindrom(number);
 
-    if (num == reverse)
-    {
-        Console.WriteLine($"{num} является палиндромом.");
-    }
-    else
-    {
-        Console.WriteLine($"{num} не является палиндромом.");
-    }
 
-    Console.ReadKey();
-}
-
-int num = Convert.ToInt32(Console.ReadLine()); 
-System.Console.WriteLine(Palindrome ());
 
 // Задача 21
 // Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
