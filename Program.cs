@@ -517,7 +517,7 @@
 //     int result = Convert.ToInt32(value); 
 //     return result; 
 // } 
- 
+
 // int[] inputArray(int length) 
 // { 
 //     int[] array = new int[length]; 
@@ -527,7 +527,7 @@
 //     } 
 //     return array; 
 // } 
- 
+
 // void PrintArray(int[] array) 
 // { 
 //     for (int i = 0; i < array.Length; i++) 
@@ -535,7 +535,7 @@
 //         Console.WriteLine($"a[{i}] = {array[i]}"); 
 //     } 
 // } 
- 
+
 // int CountPositiveNumbers(int[] array) 
 // { 
 //     int count = 0; 
@@ -548,8 +548,8 @@
 //     } 
 //     return count; 
 // } 
- 
- 
+
+
 // int length = Promt("Введите количество элементов -> "); 
 // int[] array; 
 // array = inputArray(length); 
@@ -576,3 +576,98 @@
 // double y = k1 * x + b1;
 
 // Console.Write($"\n Точка пересечения двух прямых: [{ x},{ y}]");
+
+
+//СЕМИНАР 7.
+
+/*Задача 47. Задайте двумерный массив размером m × n, заполненный случайными вещественными числами.
+
+m = 3, n = 4.
+0,5 7 -2 -0,2
+1 -3,3 8 -9,9
+8 7,8 -7,1 9*/
+
+
+// Console.WriteLine("Задайте количество строк двумерного массива:");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Задайте количество столбцов двумерного массива:");
+// int n = Convert.ToInt32(Console.ReadLine());
+// double[,] twoDimArray = new double[m, n];
+// Random rnd = new Random();
+// void PrintArray(double[,] matr)
+// {
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         { Console.Write($"{matr[i, j]} "); }
+//         Console.WriteLine();
+//     }
+// }
+
+// void FillArray(double[,] matr)
+// {
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         { matr[i, j] = Convert.ToDouble(rnd.Next(-100, 100) / 10.0); }
+//     }
+// }
+// FillArray(twoDimArray);
+// Console.WriteLine();
+// PrintArray(twoDimArray);
+
+
+/*Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
+и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+17 -> такого числа в массиве нет*/
+
+
+
+// Console.Write("Введите количество строк в массиве: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите количество столбцов в массиве: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// double[,] randomArray = new double[m, n];
+// Console.Write("Введите позицию строки: ");
+// int m2 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите позицию столбца: ");
+// int n2 = Convert.ToInt32(Console.ReadLine());
+
+// void mas(int m, int n)
+// {
+//     int i, j;
+//     Random rand = new Random();
+//     for (i = 0; i < m; i++)
+//     {
+//         Console.WriteLine();
+//         for (j = 0; j < n; j++)
+//         {
+//             randomArray[i, j] = rand.NextDouble();
+//             Console.Write($"{ randomArray[i, j]:F2} ");
+// }
+// Console.WriteLine();
+// }
+// }
+// mas(m, n);
+// if (m2 < 1 || n2 < 1)
+//     Console.Write("Позиции строк не могут быть отрицательными");
+// else if (m2 <= m + 1 && n2 <= n + 1)
+//     Console.Write($"Значение элемента равно { randomArray[m2 - 1, n2 - 1]:F2} ");
+// else Console.Write("Такого элемента нет в массиве");
+
+
+
+
+/*Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.*/
+
