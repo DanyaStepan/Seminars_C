@@ -587,34 +587,38 @@ m = 3, n = 4.
 1 -3,3 8 -9,9
 8 7,8 -7,1 9*/
 
-
-// Console.WriteLine("Задайте количество строк двумерного массива:");
-// int m = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Задайте количество столбцов двумерного массива:");
-// int n = Convert.ToInt32(Console.ReadLine());
-// double[,] twoDimArray = new double[m, n];
-// Random rnd = new Random();
-// void PrintArray(double[,] matr)
-// {
-//     for (int i = 0; i < m; i++)
-//     {
-//         for (int j = 0; j < n; j++)
-//         { Console.Write($"{matr[i, j]} "); }
-//         Console.WriteLine();
-//     }
-// }
-
-// void FillArray(double[,] matr)
-// {
-//     for (int i = 0; i < m; i++)
-//     {
-//         for (int j = 0; j < n; j++)
-//         { matr[i, j] = Convert.ToDouble(rnd.Next(-100, 100) / 10.0); }
-//     }
-// }
-// FillArray(twoDimArray);
-// Console.WriteLine();
-// PrintArray(twoDimArray);
+// double[,] Create2DArray (int rows, int columns) 
+// { 
+//     double[,] array = new double[rows,columns]; 
+//     for (int i = 0; i < rows; i++) 
+//     { 
+//         for (int j = 0; j < columns; j++) 
+//         { 
+//             array[i, j] = new Random().Next(-99, 99) / 10.0 ; 
+//         } 
+//     } 
+//     return array; 
+// } 
+ 
+// void Print2DArray(double[,] array) 
+// { 
+//     for (int i = 0; i < array.GetLength(0); i++) 
+//     { 
+//         for( int j = 0 ; j < array.GetLength(1); j++) 
+//         { 
+//             System.Console.Write(array[i,j] + " "); 
+//         } 
+//         System.Console.WriteLine(); 
+//     } 
+//     System.Console.WriteLine(); 
+// } 
+ 
+// System.Console.WriteLine("Input number of rows: "); 
+// int rows = Convert.ToInt32(Console.ReadLine()); 
+// System.Console.WriteLine("Input number of columns: "); 
+// int columns = Convert.ToInt32(Console.ReadLine()); 
+ 
+// Print2DArray(Create2DArray(rows, columns));
 
 
 /*Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
@@ -626,40 +630,62 @@ m = 3, n = 4.
 8 4 2 4
 17 -> такого числа в массиве нет*/
 
-
-
-// Console.Write("Введите количество строк в массиве: ");
-// int m = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Введите количество столбцов в массиве: ");
-// int n = Convert.ToInt32(Console.ReadLine());
-// double[,] randomArray = new double[m, n];
-// Console.Write("Введите позицию строки: ");
-// int m2 = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Введите позицию столбца: ");
-// int n2 = Convert.ToInt32(Console.ReadLine());
-
-// void mas(int m, int n)
+// int[,] Create2DArray(int rows, int columns, int minValue, int maxValue)
 // {
-//     int i, j;
-//     Random rand = new Random();
-//     for (i = 0; i < m; i++)
+//     int[,] array = new int[rows, columns];
+//     for (int i = 0; i < rows; i++)
 //     {
-//         Console.WriteLine();
-//         for (j = 0; j < n; j++)
+//         for (int j = 0; j < columns; j++)
 //         {
-//             randomArray[i, j] = rand.NextDouble();
-//             Console.Write($"{ randomArray[i, j]:F2} ");
+//             array[i, j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return array;
 // }
-// Console.WriteLine();
-// }
-// }
-// mas(m, n);
-// if (m2 < 1 || n2 < 1)
-//     Console.Write("Позиции строк не могут быть отрицательными");
-// else if (m2 <= m + 1 && n2 <= n + 1)
-//     Console.Write($"Значение элемента равно { randomArray[m2 - 1, n2 - 1]:F2} ");
-// else Console.Write("Такого элемента нет в массиве");
 
+// void Print2DArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             System.Console.Write(array[i, j] + " ");
+//         }
+//         System.Console.WriteLine();
+//     }
+//     System.Console.WriteLine();
+// }
+
+// int[,] ElementPosition(int[,] array, int posX, int posY)
+// {
+//     if (posX < array.GetLength(0) && posY < array.GetLength(1))
+//     {
+//         Console.WriteLine(array[posX, posY]);
+//     }
+    
+//     else 
+//     Console.Write($"{posX},{posY} -> числа с такими координатами НЕТ в массиве!!!");
+    
+//     return array;
+// }
+
+// System.Console.Write("Введите количество строк массива: ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите количество столбцов массива: ");
+// int columns = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите минимальное значение массива: ");
+// int minValue = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите максимальное значение массива: ");
+// int maxValue = Convert.ToInt32(Console.ReadLine());
+
+// System.Console.Write("Введите первый элемент массива: ");
+// int posX = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите второй элемент массива: ");
+// int posY = Convert.ToInt32(Console.ReadLine());
+
+// int[,] myArray = Create2DArray(rows, columns, minValue, maxValue);
+// Print2DArray(myArray);
+// ElementPosition(myArray, posX, posY);
 
 
 
@@ -671,3 +697,61 @@ m = 3, n = 4.
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.*/
 
+// int[,] Create2DArray(int rows, int columns, int minValue, int maxValue)
+// {
+//     int[,] array = new int[rows, columns];
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int j = 0; j < columns; j++)
+//         {
+//             array[i, j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return array;
+// }
+
+// void Print2DArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             System.Console.Write(array[i, j] + " ");
+//         }
+//         System.Console.WriteLine();
+//     }
+//     System.Console.WriteLine();
+// }
+
+// int MeanSum(int[,] array)
+// {
+//     int numRows = array.GetLength(0);
+//     double meanSum = 0;
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//         for (int i = 0; i < array.GetLength(0); i++)
+//         {
+//             if (i < array.GetLength(0))
+//             {
+//                 meanSum = meanSum + array[i, j];
+//             }
+//         }
+//         meanSum = meanSum / numRows;
+//         System.Console.Write($"{meanSum}; ");
+//         meanSum = 0;
+//     }
+//     return (int)meanSum;
+// }
+
+// System.Console.Write("Введите количество строк массива: ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите количество столбцов массива: ");
+// int columns = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите миниальное значение элемента массива: ");
+// int minValue = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите максимальное значение элемента массива: ");
+// int maxValue = Convert.ToInt32(Console.ReadLine());
+
+// int[,] myArray = Create2DArray(rows, columns, minValue, maxValue);
+// Print2DArray(myArray);
+// MeanSum(myArray);
